@@ -1,38 +1,1574 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  background: #f2f4ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.homeContainer,
+.topBarContainer,
+.roadMapContent,
+.suggestionsContainer,
+.suggestionsContent,
+.suggestionsContainer form,
+.suggestionsContainer aside,
+.feedBacks,
+.comments,
+.comments,
+.eachFeedBackHeader,
+.commentsDisplay,
+.commentsContainer form,
+.textAreaPost,
+.replyUser,
+.usersInfoContent,
+.roadMapTopBarContainer,
+.roadMapSectionContent,
+.innerRoadMapSectionContent,
+.eachRoadMapCircle,
+.roadMapupVotes,
+.innerRoadMap,
+.roadMapupComments,
+.userInfo,
+.selectTopText,
+.selectDropdown,
+.innerSelectDropdown,
+.innerSelectTopText {
+  display: flex;
+}
+
+.topBarContainer,
+.roadMapContent,
+.suggestionsContent,
+.suggestionsContainer,
+.feedBacks,
+.comments,
+.comments,
+.eachFeedBackHeader,
+.commentsDisplay,
+.usersInfoContent,
+.textAreaPost,
+.roadMapTopBarContainer,
+.innerRoadMap,
+.roadMapupVotes,
+.roadMapupComments,
+.selectDropdown,
+.innerSelectDropdown,
+.innerSelectTopText {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topBarContainer {
+  margin: 50px 0px 20px 0px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.homeContainer {
+  width: 100%;
+  min-height: 650px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.homeSuggestionsFeeedbackContainer {
+  width: 65%;
+}
+
+.homeTopBarContainer {
+  height: 35vh;
+}
+
+.feedbackLogo {
+  background: url('../public/fd.png') no-repeat center center/cover;
+  color: #fff;
+}
+
+.feedbackLogoContainer {
+  margin: 0px;
+  width: 100%;
+  height: 15vh;
+  position: absolute;
+  top: 0px;
+  display: none;
+}
+
+.feedbackLogo,
+.headerListContainer,
+.roadMapContainer,
+.sideListContainer,
+.sideRoadMapContainer {
+  min-height: 180px;
+  border-radius: 20px;
+}
+
+.feedbackLogoContainer {
+  padding: 1.4rem;
+}
+
+.feedbackLogo,
+.headerListContainer,
+.roadMapContainer {
+  /*width: 31.5%;*/
+  width: 100%;
+  margin: 10px 0px;
+  padding: 1.5rem;
+}
+
+.sideListContainer,
+.sideRoadMapContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.feedbackLogo figcaption,
+.feedbackLogoContainer figcaption {
+  position: relative;
+  top: 70px;
+}
+
+.feedbackLogoContainer h4 {
+  margin: 6px 0px;
+  line-height: 1.2;
+  font-size: 1.2rem;
+}
+
+.headerListContainer,
+.sideListContainer,
+.sideRoadMapContainer,
+.roadMapContainer {
+  background: #fff;
+}
+
+.headerListContainer {
+  display: grid;
+}
+
+.headerListContainer,
+.sideListContainer {
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px;
+}
+
+.sideListContainer,
+.sideRoadMapContainer {
+  display: none;
+}
+
+.headerCategory,
+.sideListCategory {
+  width: 100%;
+}
+
+.headerCategory button,
+.sideListCategory button {
+  padding: 7px;
+  width: 50px;
+  margin: auto;
+  border: none;
+  background-color: rgb(247, 248, 253);
+  color: rgb(70, 97, 230);
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.headerCategory button:hover,
+.sideListCategory button:hover {
+  background-color: rgb(70, 97, 230);
+  color: #fff;
+}
+
+.headerCategory .cat-fit,
+.sideListCategory .cat-fit {
+  width: fit-content;
+}
+
+.roadMapContainer,
+.roadMapContent {
+  display: flex;
+}
+
+.roadMapContentContainer {
+  margin: 10px 0px;
+  font-size: 1.1rem;
+}
+
+.roadMapContainer,
+.sideRoadMapContainer {
+  flex-direction: column;
+}
+
+.roadMapContent {
+  width: 90%;
+  min-height: 30px;
+}
+
+.roadMapContent h6 {
+  width: 60%;
+  font-weight: unset;
+  font-size: 0.85rem;
+  color: rgb(100, 113, 150);
+}
+
+.roadMapContent small,
+.roadMapContent h4,
+.description p {
+  color: rgb(100, 113, 150);
+}
+
+.roadMapContent small {
+  font-weight: 700;
+}
+
+.roadMapContent h4,
+.description h5 {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.firstCircle,
+.planned-bar,
+.inner-planned-bar {
+  background: rgb(244, 159, 133);
+}
+
+.secondCircle,
+.in-progress-bar,
+.inner-in-progress-bar {
+  background: rgb(173, 31, 234);
+}
+
+.thirdCircle,
+.live-bar,
+.inner-live-bar {
+  background: rgb(98, 188, 250);
+}
+
+.roadMapLink {
+  color: rgb(70, 97, 230);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.roadMapSlideShow {
+  text-align: center;
+  display: none;
+}
+
+.logoAside {
+  width: 12%;
+  min-height: 100px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  display: none;
+}
+
+.logoAside img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1);
+}
+
+.logoAside img:hover {
+  transform: scale(1.1);
+}
+
+.hamburgerMenuContainer {
+  width: 0px;
+  height: 100vh;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.4s;
+  background-color: rgb(247, 248, 253);
+  display: none;
+}
+
+.sideListContainer,
+.sideRoadMapContent {
+  margin-top: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  width: 0%;
+  height: 100vh;
+  background: rgb(150, 150, 150);
+  opacity: 0.5;
+  display: block;
+  overflow: hidden;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.suggestionsContainer,
+.roadMapTopBarContainer {
+  border-radius: 10px;
+  background: rgb(55, 63, 104);
+  color: #fff;
+  width: 100%;
+}
+
+.suggestionsContainer {
+  margin-top: 60px;
+  min-height: 70px;
+  padding: 10px;
+  overflow: unset;
+}
+
+.suggestionsContainer h4 {
+  font-weight: unset;
+  line-height: 1.3;
+  font-size: 0.87rem;
+}
+
+.suggestionsContainer figure,
+.suggestionsContainer form,
+.suggestionsContainer aside {
+  height: 50px;
+}
+
+.suggestionsContainer figure {
+  width: fit-content;
+}
+
+.suggestionsContainer form {
+  width: 50%;
+  justify-content: center;
+}
+
+.suggestionsContainer aside {
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.selectDropdownContainer {
+  z-index: 1;
+}
+
+.selectDropdownContainer,
+.innerSelectDropdownContainer {
+  position: relative;
+  top: 0px;
+  left: 7px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.innerSelectDropdownContainer {
+  padding: 17px;
+  left: 0px;
+}
+
+.selectDropdownContent,
+.innerSelectDropdownContent {
+  width: 0px;
+  overflow: hidden;
+  height: fit-content;
+  position: absolute;
+  top: 45px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.dropDown .selectDropdownContent {
+  width: 250px;
+  box-shadow: 1px 1px 1px 1px rgb(199, 199, 199);
+}
+
+.dropDown .innerSelectDropdownContent {
+  width: 100%;
+  left: 0px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 1px 1px rgb(199, 199, 199);
+}
+
+.selectDropdown,
+.innerSelectDropdown {
+  width: 100%;
+  padding: 1.1rem;
+  color: rgb(100, 113, 150);
+  font-size: 0.8rem;
+  border-top: 1px solid #eee;
+  transition: 0.4s;
+}
+
+.selectTopText {
+  align-items: center;
+}
+
+.selectDropdown:hover {
+  background: rgb(55, 63, 104);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.selectTopText img {
+  margin-left: 7px;
+}
+
+.selectTopText img {
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+
+.innerSelectTopText img {
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+
+.selectImgIcon {
+  width: 25px;
+  height: 25px;
+  display: none;
+}
+
+.selectImg .selectImgIcon {
+  display: block;
+}
+
+.dropDown .selectTopText img,
+.dropDown .innerSelectTopText img {
+  transform: rotate(0deg);
+}
+
+.innerSelectTopText h4:nth-child(1) {
+  display: none;
+}
+
+.innerSelectTopText h4 {
+  font-size: 0.9rem;
+  font-weight: unset;
+}
+
+.selectTopText,
+.innerSelectTopText {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.innerSelectTopText {
+  padding: 10x;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dataCount {
+  width: fit-content;
+  display: flex;
+  padding: 7px;
+}
+
+.dataCount h4:nth-child(2),
+.selectTopText h4:nth-child(2) {
+  margin-left: 5px;
+}
+
+.btn {
+  padding: 15px 25px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.btn-primary {
+  background: rgb(173, 31, 234);
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background: rgb(201, 93, 248);
+}
+
+.btn-secondary {
+  background: rgb(221, 74, 74);
+  border-radius: 10px;
+}
+
+.btn-edit {
+  background: rgb(70, 97, 230);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.btn-edit:hover {
+  background: rgb(89, 116, 255);
+}
+
+.eachFeedBackHeader a,
+.feedBackFormContainer .link {
+  color: rgb(70, 97, 230);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.cancel-btn {
+  background: rgb(55, 63, 104);
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.sortFormContainer {
+  cursor: pointer;
+}
+
+.sortFormContainer select {
+  margin-left: 5px;
+}
+
+.feedBacks {
+  width: 100%;
+  min-height: 150px;
+  background: #fff;
+  margin: 20px 0px;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: 0.2s;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.feedBacks:hover {
+  transform: scale(1.035);
+  box-shadow: 1px 1px 2px 1px rgb(199, 199, 199);
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.upVotes {
+  width: 7%;
+  height: fit-content;
+  padding: 5.5px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  background-color: rgb(242, 244, 255);
+}
+
+.upVotes img,
+.comments img,
+.roadMapupVotes img,
+.roadMapupComments img {
+  width: 20px;
+  height: 20px;
+}
+
+.description {
+  width: 70%;
+  min-height: 100px;
+  padding-top: 15px;
+}
+
+.description h5 {
+  color: rgb(55, 63, 104);
+}
+
+.description p:nth-child(2) {
+  padding: 12px 0px;
+}
+
+.description p:nth-child(3),
+.category {
+  text-transform: capitalize;
+  background-color: rgb(247, 248, 253);
+  color: rgb(70, 97, 230);
+  font-weight: bold;
+  width: fit-content;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.upVotes p:nth-child(2),
+.roadMapupVotes p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#upvotesBtn {
+  border: none;
+  cursor: pointer;
+}
+
+.comments p:nth-child(2) {
+  margin-left: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.innerFeedBack {
+  display: none;
+}
+
+.feedBackFormContainer {
+  width: 50%;
+}
+
+.feedBackFormContainer,
+.eachFeedBackContainer {
+  margin: 100px auto 50px auto;
+  min-height: 650px;
+}
+
+.eachFeedBackContainer {
+  width: 60%;
+}
+
+.feedBackFormContent,
+.feedBackForm {
+  width: 100%;
+  min-height: inherit;
+}
+
+.feedBackFormContent svg {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.feedBackForm {
+  background: #fff;
+  padding: 20px;
+}
+
+.feedBackForm h3 {
+  padding-top: 50px;
+}
+
+.formControl {
+  min-height: 120px;
+}
+
+.formControl,
+.selectformControl {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.formControl input,
+.formControl select,
+.formControl textArea {
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  background: #f2f4ff;
+  margin: 20px 0px;
+}
+
+.innerSelectDropdownContainer {
+  border-radius: 10px;
+  border: none;
+  background: #f2f4ff;
+}
+
+.innerSelectDropdownContent {
+  position: absolute;
+  z-index: 1;
+}
+
+.formControl small,
+.selectformControl small {
+  padding: 5px 0px;
+}
+
+.formControl input:focus,
+.formControl select:focus,
+.formControl textArea:focus {
+  outline: none;
+}
+
+.formControl textArea {
+  min-height: 110px;
+}
+
+.formBtnGroup {
+  display: block;
+  min-height: 60px;
+}
+
+.delBtn,
+.sideBtn {
+  display: block;
+}
+
+.delBtn {
+  float: left;
+}
+
+.sideBtn {
+  float: right;
+}
+
+.commentsContainer {
+  width: 100%;
+  background: #fff;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.commentsContent {
+  margin: 20px auto;
+  border-top: 1.5px solid #eee;
+  width: 95%;
+}
+
+.commentsContent img,
+.commentsContainer form img {
+  width: 100px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.commentsSectionContent {
+  width: 100%;
+}
+
+.eachReplyContent {
+  margin: 0px auto;
+}
+
+.users {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.userInfoImg {
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+}
+
+.replyInfoImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.bgImgOne {
+  background: url('./u-2.jpg') no-repeat center center/cover;
+}
+
+.bgImgTwo {
+  background: url('./u-1.jpg') no-repeat center center/cover;
+}
+
+.bgImgThree {
+  background: url('./u-3.jpg') no-repeat center center/cover;
+}
+
+.bgImgFour {
+  background: url('./u-4.jpg') no-repeat center center/cover;
+}
+
+.bgImgFive {
+  background: url('./u-5.jpg') no-repeat center center/cover;
+}
+
+.bgImgSix {
+  background: url('./u-6.jpeg') no-repeat center center/cover;
+}
+
+.bgImgSeven {
+  background: url('./u-7.jpg') no-repeat center center/cover;
+}
+
+.bgImgEight {
+  background: url('./u-8.jpg') no-repeat center center/cover;
+}
+
+.bgImgNine {
+  background: url('./u-11.jpg') no-repeat center center/cover;
+}
+
+.bgImgTen {
+  background: url('./u-9.jpeg') no-repeat center center/cover;
+}
+
+.bgImgEleven {
+  background: url('./u-10.jpg') no-repeat center center/cover;
+}
+
+.bgImgTwelve {
+  background: url('./u-12.jpg') no-repeat center center/cover;
+}
+
+.bgImgThirteen {
+  background: url('./u-13.jpg') no-repeat center center/cover;
+}
+
+.userInfo {
+  width: 100%;
   align-items: center;
+}
+
+.userDetails {
+  margin-left: 20px;
+}
+
+.users .replyingTo {
+  padding-top: 10px;
+  color: rgb(173, 31, 234);
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 85%;
+  margin-left: 85px;
+}
+
+.innerReply .replyingTo {
+  margin-left: 70px;
+}
+
+.users small {
+  font-size: 0.85rem;
+  color: rgb(100, 113, 150);
+  font-weight: normal;
+}
+
+.commentsContent h4 {
+  color: rgb(55, 63, 104);
+  font-size: 0.9rem;
+}
+
+.commentsContent p {
+  color: rgb(100, 113, 150);
+  font-size: 0.85rem;
+}
+
+.commentsContent button {
+  border: none;
+  background: none;
+  color: rgb(70, 97, 230);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.commentsContainer form {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roadMapSectionContent,
+.innerRoadMapSectionContent {
+  justify-content: space-between;
+}
+
+.commentsContainer form .div {
+  width: 120px;
+}
+
+.commentsContainer form textarea {
+  width: 98%;
+  margin: auto;
+  position: relative;
+  right: 12px;
+}
+
+.commentsContainer form button {
+  padding: 7px;
+  width: 85px;
+  position: relative;
+  top: -35px;
+  font-size: 0.8rem;
+}
+
+.commentsContainer form button,
+.textAreaPost button {
+  background: rgb(218, 131, 255);
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.commentsContainer form button:hover,
+.textAreaPost button:hover {
+  background: rgb(218, 131, 255);
+}
+
+.replyForm {
+  height: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.showReplyForm .replyForm {
+  height: 150px;
+  transition: 0.3s;
+}
+
+.addComment {
+  margin: 30px 0px 100px 0px;
+}
+
+.addComment textarea {
+  min-height: 150px;
+}
+
+.replyUser {
+  width: 80%;
+  margin-left: 20%;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+
+.replyUserContent {
+  width: 70%;
+}
+
+.roadMapSection {
+  width: 65%;
+  min-height: 650px;
+  margin: 50px auto 50px auto;
+}
+
+.roadMapTopBarContainer {
+  min-height: 100px;
+  padding: 20px;
+}
+
+.roadMapTopBarContainer a {
+  color: #fff;
+}
+
+.roadMapTopBarContainer h2 {
+  padding-top: 10px;
+}
+
+.roadMapFeatures {
+  width: 32.7%;
+  min-height: 650px;
+}
+
+.roadMapCounter {
+  min-height: 100px;
+  padding: 10px;
+}
+
+.roadMapCounter h5 {
+  padding-top: 20px;
+}
+
+.roadMapCounter p {
+  font-size: 0.9rem;
+  padding-top: 5px;
+}
+
+.eachRoadMap {
+  width: 100%;
+  min-height: 270px;
+  margin: 0px 0px 20px 0px;
+  background: #fff;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.eachRoadMap:hover {
+  transform: scale(1.02);
+}
+
+.planned-bar,
+.in-progress-bar,
+.live-bar,
+.inner-planned-bar,
+.inner-in-progress-bar,
+.inner-live-bar {
+  width: 100%;
+  height: 4.5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.eachRoadMapCircle {
+  align-items: center;
+  margin-top: 10px;
+}
+
+.eachRoadMapCircle {
+  padding: 15px;
+}
+
+.eachRoadMapCircle p {
+  margin-left: 7px;
+}
+
+.eachRoadMapCircle p,
+.eachRoadMapTitle p {
+  color: rgb(100, 113, 150);
+  font-size: 0.85rem;
+}
+
+.eachRoadMapTitle {
+  padding: 5px 15px 0px 15px;
+  min-height: 100px;
+}
+
+.eachRoadMapTitle h6 {
+  font-size: 0.788rem;
+}
+
+.eachRoadMapTitle p {
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.category {
+  margin-left: 15px;
+}
+
+.roadMapupVotes {
+  background-color: rgb(242, 244, 255);
+}
+
+.roadMapupVotes,
+.roadMapupComments {
+  width: fit-content;
+  padding: 5px;
+}
+
+.roadMapupComments p {
+  margin-left: 7px;
+}
+
+.innerRoadMap {
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.noFeedBacks {
+  background: #fff;
+  min-height: 470px;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.noFeedBacks svg {
+  margin: 0px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.noFeedBackContent {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.noFeedBackContent h3 {
+  color: rgb(55, 63, 104);
+}
+
+.noFeedBackContent p {
+  margin: 10px auto;
+  font-size: 0.9rem;
+  color: rgb(100, 113, 150);
+}
+
+.addColorBtn button {
+  color: rgb(247, 248, 253);
+  background-color: rgb(70, 97, 230);
+}
+
+.error {
+  transform: translateY(-10px);
+  color: rgb(255, 38, 0);
+  display: none;
+}
+
+.showError .error {
+  display: block;
+}
+
+.displayBtn .btn {
+  cursor: pointer;
+  background: rgb(173, 31, 234);
+}
+
+.bar-color {
+  position: relative;
+  top: -30px;
+}
+
+/*color change*/
+
+.plan .inner-in-progress-bar,
+.plan .inner-live-bar,
+.progress .inner-live-bar,
+.progress .inner-planned-bar,
+.in-live .inner-in-progress-bar,
+.in-live .inner-planned-bar {
+  display: none;
+}
+
+.progress .inner-in-progress-bar,
+.in-live .inner-live-bar {
+  display: block;
+}
+
+/*.innerRoadMapDisplayContent {
+  width: 100vw;
+  position: absolute;
+  left: 0px;
+  display: none;
+  padding: 20px;
+}*/
+
+.innerRoadMapDisplayContent {
+  width: 0vw;
+  position: absolute;
+  left: 0px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.innerRoadMapSectionContent {
+  display: none;
+}
+
+.homeTopBarContainer {
+  width: 20%;
+}
+
+/* Media Querries for responsiveness*/
+
+@media (max-width: 1150px) {
+  .suggestionsContainer form {
+    width: 45%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 1050px) {
+  .roadMapSection {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .eachFeedBackContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 950px) {
+  .topBarContainer {
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+    width: 95vw;
+  }
+
+  .homeTopBarContainer {
+    height: 20vh;
+  }
+
+  .homeContainer {
+    flex-direction: column;
+  }
+
+  .homeSuggestionsFeeedbackContainer {
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    width: 95vw;
+    margin: auto;
+  }
+
+  .homeTopBarContainer,
+  .homeSuggestionsFeeedbackContainer {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .feedbackLogo,
+  .headerListContainer,
+  .roadMapContainer {
+    width: 31.5%;
+  }
+
+  .homeContainer {
+    justify-content: unset;
+  }
+
+  .suggestionsContainer {
+    margin-top: 0px;
+  }
+
+  .suggestionsContainer form {
+    margin-left: 10px;
+  }
+
+  .topBarContainer {
+    margin: 30px 0px 0px 0px;
+  }
+
+  .topBarContainer,
+  .homeSuggestionsFeeedbackContainer {
+    padding: 20px;
+  }
+
+  .feedBackFormContainer {
+    width: 80%;
+  }
+
+  .roadMapSection {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .feedbackLogoContainer {
+    background: url('../public/fd.png') no-repeat center center/cover;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBarContainer {
+    position: absolute;
+    right: 0px;
+    top: 15.3vh;
+    height: 85.7vh;
+    display: flex;
+    flex-direction: column;
+    width: 0%;
+    background-color: rgb(247, 248, 253);
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .openMenu .topBarContainer,
+  .overlayOpen .overlay {
+    width: 50%;
+  }
+
+  .openMenu .suggestionsContainer {
+    position: relative;
+    z-index: -1;
+  }
+
+  .openMenu .topBarContainer {
+    transition: 0.4s;
+  }
+
+  .homeSuggestionsFeeedbackContainer {
+    top: 0px;
+  }
+
+  .roadMapContainer {
+    position: relative;
+    top: -60px;
+  }
+
+  .feedbackLogoContainer {
+    background: url('../public/fdb.png') no-repeat center center/cover;
+    width: 100%;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1;
+  }
+
+  .feedbackLogo {
+    display: none;
+  }
+
+  .feedbackLogo,
+  .headerListContainer,
+  .roadMapContainer {
+    width: 70%;
+    margin: auto;
+  }
+
+  .hamburgerMenuContainer {
+    display: block;
+  }
+
+  .suggestionsContainer figure,
+  .commentsContainer form .div {
+    display: none;
+  }
+
+  .feedbackLogoContainer figcaption {
+    top: 10px;
+  }
+
+  .homeTopBarContainer {
+    height: 0vh;
+  }
+
+  .sideListContainer {
+    display: grid;
+  }
+
+  .sideRoadMapContainer,
+  .innerRoadMapDisplayContent {
+    display: flex;
+  }
+
+  .innerRoadMapDisplayContent {
+    flex-direction: column;
+  }
+
+  .logoAside,
+  .overlay,
+  .innerRoadMapSectionContent {
+    display: flex;
+  }
+
+  .suggestionsContainer {
+    margin-top: 99px;
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .suggestionsContainer form {
+    justify-content: flex-start;
+    margin-left: 1.4%;
+  }
+
+  .homeContainer,
+  .topBarContainer,
+  .homeSuggestionsFeeedbackContainer {
+    padding: 0px;
+  }
+
+  .topBarContainer {
+    margin: 0px;
+  }
+
+  .feedBacks {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .openFeed .feedBacks {
+    z-index: -1;
+  }
+
+  .innerEachFeedBack .feedBacks {
+    width: 100%;
+  }
+
+  .users .replyingTo {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+  }
+
+  .roadMapSection {
+    width: 100%;
+    margin: 0;
+  }
+
+  .roadMapSlideShow {
+    display: block;
+    cursor: pointer;
+  }
+
+  .roadMapSectionContent {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .feedbackLogo,
+  .headerListContainer,
+  .roadMapContainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .feedBacks {
+    flex-direction: column;
+  }
+
+  .feedBacks .upVotes,
+  .feedBacks .comments {
+    display: none;
+  }
+
+  .innerFeedBack,
+  .innerFeedBack .comments {
+    display: flex;
+  }
+
+  .innerFeedBack,
+  .description {
+    width: 100%;
+  }
+
+  .innerFeedBack {
+    justify-content: space-between;
+    margin: 10px 0px;
+  }
+
+  .innerFeedBack .upVotes {
+    display: block;
+    width: fit-content;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .feedBackFormContainer,
+  .eachFeedBackContainer {
+    width: 95%;
+  }
+}
+
+@media (max-width: 500px) {
+  .suggestionsContent {
+    flex-direction: column;
+  }
+
+  .selectDropdownContainer {
+    margin-top: 13px;
+  }
+
+  .formBtnGroup,
+  .formBtnGroup aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formBtnGroup .btn {
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  .openMenu .topBarContainer {
+    width: 100%;
+  }
+
+  .suggestionsContainer form {
+    width: 55%;
+  }
+
+  .overlayOpen .overlay {
+    width: 0%;
+  }
+
+  .replyUser {
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 400px) {
+  .suggestionsContainer {
+    flex-direction: column;
+  }
+
+  .suggestionsContainer form {
+    width: 80%;
+  }
+
+  .suggestionsContainer aside {
+    width: 80%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .dropDown .selectDropdownContent {
+    width: 200px;
+  }
+
+  .selectDropdownContainer {
+    width: fit-content;
+  }
+
+  .roadMapTopBarContainer {
+    flex-direction: column;
+  }
+
+  .roadMapTopBarContainer .btn {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  .suggestionsContainer form,
+  .suggestionsContainer aside {
+    width: 95%;
+  }
+
+  .openMenu {
+    width: 100vw;
+  }
+
+  .feedbackLogo,
+  .headerListContainer,
+  .roadMapContainer {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 250px) {
+  .feedbackLogoContainer h4 {
+    margin-top: 15px;
+    line-height: 1.2;
+    font-size: 0.9rem;
+  }
+
+  .logoAside img {
+    width: 30px;
+    height: 30px;
+    top: 60px;
   }
 }
