@@ -84,6 +84,8 @@ const CustomSelect:React.FC<updateData> = ( {upDateData, customData, selectData}
                 }
             })
 
+            console.log(eachOption)
+
         }
     
 
@@ -106,6 +108,7 @@ const CustomSelect:React.FC<updateData> = ( {upDateData, customData, selectData}
                         </article>
                     )
                 })
+
             }
         </article>
     </article>

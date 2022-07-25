@@ -17,6 +17,7 @@ const Home:React.FC = () => {
   const storedData = firstStoredData === null ? null : JSON.parse(localStorage.getItem('All Data') || '').filter((item:any) => item.status !== 'planned' && item.status !== 'in-progress' && item.status !== 'live');
   const allData = firstStoredData ? JSON.parse(localStorage.getItem('All Data') || '').filter((item:any) => item.status !== 'planned' && item.status !== 'in-progress' && item.status !== 'live') : localData;
   const eachOption:string | null = localStorage.getItem('Each Option') as string;
+  const items = document.querySelectorAll('.eachOption') as NodeList;
 
 
   const getData = () => {
@@ -29,6 +30,7 @@ const Home:React.FC = () => {
   const storeData = () => {
     if(firstStoredData === null){
       localStorage.setItem('All Data', JSON.stringify(data))
+      items[0].parentElement?.classList.add('selectImg')
     } else {
       localStorage.setItem('All Data', (firstStoredData))
     }
