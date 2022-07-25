@@ -47,7 +47,6 @@ const Home:React.FC = () => {
   React.useEffect(() => {
     getData();
     filterData(colorBtn) //eslint-disable-next-line
-    console.log(items)
   }, [])
 
   const filterData = (id:string) => {
