@@ -11,25 +11,34 @@ const Home:React.FC = () => {
 
   const [mainData, setMainData] = useState<datas[] | any>([])
   const [noFeedBack, setNoFeedBack] = useState('')
-  const firstStoredData = localStorage.getItem('All Data');
+  const firstStoredData = localStorage.getItem('All Data') as string;
   const colorBtn = localStorage.getItem('list Btn') !== null ? JSON.parse(localStorage.getItem('list Btn') || "").toLowerCase() : "all";
   const localData = data.filter(item => item.status !== 'planned' && item.status !== 'in-progress' && item.status !== 'live');
   const storedData = firstStoredData === null ? null : JSON.parse(localStorage.getItem('All Data') || '').filter((item:any) => item.status !== 'planned' && item.status !== 'in-progress' && item.status !== 'live');
   const allData = firstStoredData ? JSON.parse(localStorage.getItem('All Data') || '').filter((item:any) => item.status !== 'planned' && item.status !== 'in-progress' && item.status !== 'live') : localData;
+  const eachOption:string | null = localStorage.getItem('Each Option') as string;
 
 
   const getData = () => {
     const newData:datas[] = storedData === null ? localData : storedData;
     setMainData(newData)
     storeData();
+    storeFilter();
   }
 
   const storeData = () => {
     if(firstStoredData === null){
       localStorage.setItem('All Data', JSON.stringify(data))
-      localStorage.setItem('Each Option', JSON.stringify('Most Upvotes'))
     } else {
       localStorage.setItem('All Data', (firstStoredData))
+    }
+  }
+
+  const storeFilter = () => {
+    if(eachOption === null){
+      localStorage.setItem('Each Option', JSON.stringify('Most Upvotes'))
+    } else {
+      localStorage.setItem('Each Option', eachOption)
     }
   }
 

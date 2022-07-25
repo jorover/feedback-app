@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans:ital,wght@0,300;1,500&family=Poppins&family=Raleway:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,8 @@
 
 body {
   background: #f2f4ff;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
 }
 
 html {
@@ -1233,7 +1237,7 @@ a {
   .feedbackLogo,
   .headerListContainer,
   .roadMapContainer {
-    width: 31.5%;
+    width: 32%;
   }
 
   .homeContainer {
@@ -1512,6 +1516,13 @@ a {
 @media (max-width: 400px) {
   .suggestionsContainer {
     flex-direction: column;
+  }
+
+  .suggestionsContainer .btn {
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    padding: 12px;
   }
 
   .suggestionsContainer form {
