@@ -28,9 +28,9 @@ const Home:React.FC = () => {
   }
 
   const storeData = () => {
-    if(firstStoredData === null){
+    if((firstStoredData && items) === null){
       localStorage.setItem('All Data', JSON.stringify(data))
-      items[0].parentElement?.classList.add('selectImg')
+      window.location.reload();
     } else {
       localStorage.setItem('All Data', (firstStoredData))
     }
@@ -47,6 +47,7 @@ const Home:React.FC = () => {
   React.useEffect(() => {
     getData();
     filterData(colorBtn) //eslint-disable-next-line
+    console.log(items)
   }, [])
 
   const filterData = (id:string) => {
