@@ -27,6 +27,7 @@ const Home:React.FC = () => {
   const storeData = () => {
     if(firstStoredData === null){
       localStorage.setItem('All Data', JSON.stringify(data))
+      localStorage.setItem('Each Option', JSON.stringify('Most Upvotes'))
     } else {
       localStorage.setItem('All Data', (firstStoredData))
     }
