@@ -72,10 +72,10 @@ const CustomSelect:React.FC<updateData> = ( {upDateData, customData, selectData}
     React.useEffect(() => {
         const selectItems = () => {
             const items = document.querySelectorAll('.eachOption');
-            const eachOption = localStorage.getItem('Each Option') || ""
+            const eachOption:string | null = localStorage.getItem('Each Option') as string
             
             items.forEach((item:any) => {
-                if(item.innerText === JSON.parse(eachOption) && item.classList.contains('eachOption')){
+                if(item.innerText === JSON.parse(eachOption === null ? 'Most Upvotes' : eachOption) && item.classList.contains('eachOption')){
                     removeImgClass()
                     item.parentElement.classList.add('selectImg')
                     setOption(JSON.parse(eachOption))
