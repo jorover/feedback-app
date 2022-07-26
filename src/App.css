@@ -1289,6 +1289,7 @@ a {
     background-color: rgb(247, 248, 253);
     overflow: hidden;
     z-index: 10;
+    justify-content: center;
   }
 
   .openMenu .topBarContainer,
@@ -1307,11 +1308,6 @@ a {
 
   .homeSuggestionsFeeedbackContainer {
     top: 0px;
-  }
-
-  .roadMapContainer {
-    position: relative;
-    top: -60px;
   }
 
   .feedbackLogoContainer {
@@ -1333,6 +1329,13 @@ a {
   .roadMapContainer {
     width: 70%;
     margin: auto;
+    position: absolute;
+    top: 20px;
+    min-height: 220px;
+  }
+
+  .roadMapContainer {
+    top: 300px;
   }
 
   .hamburgerMenuContainer {
