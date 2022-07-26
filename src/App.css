@@ -1281,8 +1281,8 @@ a {
   .topBarContainer {
     position: absolute;
     right: 0px;
-    top: 15.3vh;
-    height: 85.7vh;
+    top: 100px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     width: 0%;

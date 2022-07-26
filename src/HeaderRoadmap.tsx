@@ -9,7 +9,7 @@ const HeaderRoadmap = ( {roadMapContainer, roadMapContent, roadMapContentContain
     <section className={roadMapContainer}>
       <header className={roadMapContent}>
          <h4> RoadMap </h4>
-         <Link to="/roadmap" className="roadMapLink"> 
+         <Link to="/roadmap" className="roadMapLink" onClick={()=> document.body.style.overflow = 'scroll'}> 
           View 
          </Link>
       </header>
